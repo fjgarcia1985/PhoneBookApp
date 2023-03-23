@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "PhoneBookAppWeb"
+  "defaultProject": "PhoneBookAppWeb",
+  "cli": {
+    "analytics": "cd166cf8-4391-4d78-80fa-c2786df5c7eb"
+  }
 }
