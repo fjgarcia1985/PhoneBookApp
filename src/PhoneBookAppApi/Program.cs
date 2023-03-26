@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using PhoneBookAppApi;
 using PhoneBookAppApi.Models;
 using System;
@@ -26,7 +27,18 @@ app.MapGet("/contacts", async (PhoneBookContext context) => Results.Ok(await con
 
 app.MapGet("/contacts/{id}", async (int id, PhoneBookContext context) =>
 {
-    var contact = await context.Contacts.FindAsync(id);
+    var contact = context.Contacts.FindAsync(id);
+    return await contact != null ? Results.Ok(contact) : Results.NotFound();
+});
+
+app.MapGet("/contactsByLastName", (string lastName, PhoneBookContext context) =>
+{
+    IEnumerable<Contact>? contact = null;
+    if (!lastName.IsNullOrEmpty())
+    {
+        contact = context.Contacts.Where(x => x.LastName.StartsWith(lastName));
+    }
+
     return contact != null ? Results.Ok(contact) : Results.NotFound();
 });
 

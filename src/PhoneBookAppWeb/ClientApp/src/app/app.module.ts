@@ -6,14 +6,14 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { ContactsComponent } from './contacts/contacts.component';
+import { PhoneBookComponent } from './phone-book/phone-book.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    ContactsComponent,
+    PhoneBookComponent,
     HomeComponent,
   ],
   imports: [
@@ -22,7 +22,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'contacts', component: ContactsComponent },
+      { path: 'phone-book', component: PhoneBookComponent },
     ])
   ],
   providers: [],
