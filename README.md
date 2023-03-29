@@ -1,5 +1,5 @@
 # PhoneBookApp
-Proyecto para la prueba de Fast Development
+Proyecto de demo de una Agenda con Angular.
 
 # PhoneBookAppApi
 Proyecto se realizo con Tecnica de Minimal APIs para su rápida realización
